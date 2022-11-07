@@ -34,13 +34,13 @@ const Item = ({ product }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         <Link to={"/producto/" + product.id}>
           <Button size="small" color="primary">
             Ver Detalles
           </Button>
         </Link>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 };
