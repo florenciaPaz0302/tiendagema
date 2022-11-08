@@ -16,6 +16,6 @@ export const styles = {
     },
     categorias: {
         margin: 10,
-        color: "red",
+        color: "blue",
     },
 };
