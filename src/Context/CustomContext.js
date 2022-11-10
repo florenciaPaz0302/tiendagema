@@ -8,8 +8,8 @@ export const CustomProvider = ({ children }) => {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        const cantidad =0;
-        const totalC = 0;
+        let cantidad =0;
+        let totalC = 0;
         cart.forEach(item => {
             cantidad += item.cantidad;
             totalC +=(item.price * item.cantidad)
@@ -21,8 +21,7 @@ export const CustomProvider = ({ children }) => {
 
     const addItem = (item,cantidad) =>{
         const purchase = {...item, qty:cantidad}
-        const existsInCart = cart.find((prod)=> prod.id === item.id)
-        if(existsInCart){
+        if(IsInCart(item.id)){
                     const carritoActualizado = cart.map((prod)=>{
                         if(prod.id === item.id){
                             return {...prod, quantity:prod.qty + cantidad}
@@ -52,3 +51,5 @@ export const CustomProvider = ({ children }) => {
 
     return <Context.Provider value={{cart, qty, total,addItem, deleteItem, clear}}>{children}</Context.Provider>;
 }
+
+// const existsInCart = cart.find((prod)=> prod.id === item.id)
