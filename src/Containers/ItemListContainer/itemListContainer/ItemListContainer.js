@@ -15,7 +15,7 @@ export const ItemListContainer =({ greeting }) => {
     const URL_CAT = `${URL_BASE}/category/${id}`;
 
     const productCollection = collection(db, "productos");
-    const q = query (productCollection, where(`category`, `==`, id ))
+    const q = query (productCollection, where(`category`, `==`, "id" ))
 
     useEffect(() => {
         getDocs(productCollection)
