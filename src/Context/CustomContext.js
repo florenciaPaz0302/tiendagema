@@ -20,8 +20,21 @@ export const CustomProvider = ({ children }) => {
     }, [cart])
 
     const addItem = (item,cantidad) =>{
-        console.log(item);
-        console.log(`esta funcion agrega ${cantidad} cantidad del producto ${item} al carrito`);
+        const purchase = {...item, qty:cantidad}
+        const existsInCart = cart.find((prod)=> prod.id === item.id)
+        if(existsInCart){
+                    const carritoActualizado = cart.map((prod)=>{
+                        if(prod.id === item.id){
+                            return {...prod, quantity:prod.qty + cantidad}
+                        }else{
+                            return prod
+                        }
+                    })
+                    setCart(carritoActualizado )
+                }else{
+                    setCart([...cart, purchase])
+                }
+       
     };
 
     const deleteItem = (id) =>{
