@@ -18,6 +18,39 @@ export const ItemListContainer =({ greeting }) => {
     const q = query (productCollection, where(`category`, `==`, "id" ))
 
     useEffect(() => {
+      const productCollection = collection(db, "productos");
+       const q =id ? query(productCollection, where("category", "==", id )) : productCollection
+        getDocs( q)
+        .then((result) => {
+          const listProducts = result.docs.map((item) => {
+            return {
+              ...item.data(),
+              id: item.id,
+            };
+          });
+          setProducts(listProducts);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(setLoading(false));
+  }, [id]);
+
+    
+    return (
+        <>
+         <h1>{greeting}</h1>
+         {
+            <>
+            {loading ? <h1>Cargando..</h1> : <ItemList products={products} />}
+            </>
+         }
+        </>
+    );
+};
+
+
+/*useEffect(() => {
         getDocs(productCollection)
         .then((result) => {
           const listProducts = result.docs.map((item) => {
@@ -32,20 +65,7 @@ export const ItemListContainer =({ greeting }) => {
           console.log(error);
         })
         .finally(setLoading(false));
-  }, [id, URL_BASE, URL_CAT]);
-    
-    return (
-        <>
-         <h1>{greeting}</h1>
-         {
-            <>
-            {loading ? <h1>Cargando..</h1> : <ItemList products={products} />}
-            </>
-         }
-        </>
-    );
-};
-
+  }, [id, URL_BASE, URL_CAT]);*/
 /*
 useEffect(() =>{
         fetch("https://fakestoreapi.com/products")
