@@ -11,8 +11,8 @@ export const CustomProvider = ({ children }) => {
         let cantidad =0;
         let totalC = 0;
         cart.forEach(item => {
-            cantidad += item.cantidad;
-            totalC +=(item.price * item.cantidad)
+            cantidad += item.qty;
+            totalC +=(item.price * item.qty)
         });
         setQty(cantidad);
         setTotal(totalC);
@@ -52,4 +52,3 @@ export const CustomProvider = ({ children }) => {
     return <Context.Provider value={{cart, qty, total,addItem, deleteItem, clear}}>{children}</Context.Provider>;
 }
 
-// const existsInCart = cart.find((prod)=> prod.id === item.id)

@@ -22,7 +22,7 @@ const CheckOut = () => {
         addDoc(ventas, {
             comprador,
             items: cart,
-            total: total(),
+            total: total,
             date: serverTimestamp()
         })
         .then((res)=>{
@@ -65,45 +65,3 @@ const CheckOut = () => {
 };
 
 export default CheckOut;
-/*import React, { useState } from "react";
-
-const CheckOut = () => {
-    const [comprador, setComprador]= useState({});
-    const [orderId, setOrderId]= useState('')
-
-    
-
-    const datosComprador = (e)=> {
-        setComprador({
-            ...comprador,
-           [e.target.name]:e.target.value
-        })
-    };
-
-    return (
-        <div>
-         <div>
-           <h2>Checkout</h2>
-           <h4>Por favor complete todos los campos</h4>
-           <form style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}} >
-         <div >
-            <label  >Nombre Completo</label>
-            <input  type="text" placeholder='Nombre y Apellido' name="name" onChange={datosComprador} />
-         </div>
-         <div >
-             <label  >Numero de telefono</label>
-             <input  type="number" placeholder='011587892545' name="phone" onChange={datosComprador}  />
-         </div>
-         <div >
-             <label  >E-mail</label>
-             <input  type="email" placeholder='pepe@gmail.com' name="email" onChange={datosComprador} />
-         </div>
-         <button  type='submit'>Finalizar Compra</button>
-        
-         </form>
-        </div>
-        </div>
-    
-    );
-};
-export default CheckOut;*/

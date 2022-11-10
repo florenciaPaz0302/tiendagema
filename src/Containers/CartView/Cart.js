@@ -30,33 +30,4 @@ export const Cart = ({ estilo, color }) => {
       );
     };
 
-    /*
-    
-    import { db } from "../../firebase/firebase";
-import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/firestore"const comprador = {
-        nombre: `maria`,
-        apellido: `mitre`,
-        email: `b@b.com`
-    };
-    const finalizarCompra = ()=>{
-        const ventasCollection = collection(db,"ventas");
-        addDoc(ventasCollection,{
-            comprador,
-            items:[{nombre:'remera'},{nombre:'short'}],
-            total: 200,
-            date:serverTimestamp()
-        })
-        .then(result=>{
-            console.log(result.id);
-          })
-        .catch(e => {
-            console.log('todo mal');
-            console.log(e);
-          });
-          
-        clear();
-        }
-        const actualizarStock = ()=>{
-            const updateStock = doc(db, "productos","tr8nxpCyuMbOsHfoyZuE")
-            updateDoc(updateStock,{stock:80})
-          }*/
+   
