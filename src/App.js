@@ -10,7 +10,7 @@ import { CustomProvider } from "./Context/CustomContext";
 
 
 const App = () => {
-  const mensaje = "Buenas";
+  const mensaje = "Mi Tienda";
 
   return (
      <BrowserRouter>
