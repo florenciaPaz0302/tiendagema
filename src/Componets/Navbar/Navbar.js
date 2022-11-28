@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link style={styles.imagenes} to="/">
             <img style={styles.imagenes} src={logo} alt="tienda online" />
           </Link>
-          <h1>TIENDA GEMA</h1>
+          <h1 style={{backgroundColor: "blue",fontSize:"6rem"}}>TIENDA GEMA</h1>
           <nav>
             {categorias.map((categoria) => {
               return (

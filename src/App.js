@@ -10,8 +10,9 @@ import CheckOut from "./Containers/CheckOut/CheckOut"
 
 
 
+
 const App = () => {
-  const mensaje = "Mi Tienda";
+  const mensaje = "Productos en Tienda Gema";
 
   return (
      <BrowserRouter>

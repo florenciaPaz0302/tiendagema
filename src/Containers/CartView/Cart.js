@@ -13,7 +13,7 @@ export const Cart = ({ estilo, color }) => {
         <>
           {cart.length === 0 ? (
             <>
-              <h1 className={estilo ? "blue" : "red"}>
+              <h1 className={estilo ? "green" : "blue"}>
                 No agregaste productos <Link to="/">ingresa aqui</Link>
               </h1>
               <h2 className={`tamano ${color || ''}`}>Gracias por visitarnos</h2>

@@ -35,8 +35,8 @@ const CheckOut = () => {
     <div>
     {!orderId 
     ?<div>
-    <h2>Checkout</h2>
-     <h4>Por favor complete todos los campos</h4>
+    <h2 style={{backgroundColor: "blue",fontSize:"2rem"}}>Checkout</h2>
+     <h4 style={{backgroundColor: "salmon",fontSize:"1rem"}}>Por favor complete todos los campos</h4>
      <form style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}} onSubmit={finalizarCompra}>
          <div >
              <label >Nombre Completo</label>
@@ -44,7 +44,7 @@ const CheckOut = () => {
          </div>
          <div >
              <label  >Numero de telefono</label>
-             <input  type="number" placeholder='011587892545' name="phone"  onChange={datosComprador} />
+             <input  type="number" placeholder='012354854648' name="phone"  onChange={datosComprador} />
          </div>
          <div >
              <label  >E-mail</label>
@@ -56,8 +56,8 @@ const CheckOut = () => {
     </div>
     :
     <div>
-     <h2>Muchas gracias por su compra!</h2>
-     <h4>Su orden es: {orderId}</h4>
+     <h2>Muchas Gracias por su Compra!</h2>
+     <h4 style={{backgroundColor: "salmon",fontSize:"2rem"}}>Numero de Pedido: {orderId}</h4>
      <Link  to='/'>Volver</Link>
     </div>}
  </div>
